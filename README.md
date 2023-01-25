@@ -4,10 +4,10 @@
 O dashboard é uma aplicação web que tem como objetivo mostrar os dados coletados pelo projeto AR.
 
 ## Tecnologias utilizadas:
-- [Chart.js] (https://www.chartjs.org/)
-- [CSS] (https://www.w3schools.com/css/)
-- [HTML] (https://www.w3schools.com/html/)
-- [JavaScript] (https://www.w3schools.com/js/)
+- [Chart.js](https://www.chartjs.org/)
+- [CSS](https://www.w3schools.com/css/)
+- [HTML](https://www.w3schools.com/html/)
+- [JavaScript](https://www.w3schools.com/js/)
 
 ## Como executar:
 - Clone o repositório
