@@ -2,10 +2,14 @@ const color = "#FFFFFF";
 let dataSetpoint = [15, 15, 15, 15, 15, 10, 10, 10, 10, 10];
 let dataTanque1 = [0, 5, 5, 5, 5, 10, 10, 14, 15, 15];
 let dataTanque2 = [0, 0, 0, 5, 20, 20, 20, 15, 15, 14];
-let labelsX = [0, .1, .2, .3, .4, .5, .6, .7, .8, .9];
+let labelsX = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
 let SinalControle = [-1, -1, 0, 0, 1, 1, 2, 2, 3, 3];
-let fonte = 'Montserrat, sans-serif';
-const chart = new Chart(document.getElementById("myChart"), {
+let fonte = "Montserrat, sans-serif";
+
+/* This code creates a Chart object using JavaScript's Chart.js library. 
+It takes in two arguments, the first being the element on the HTML page where the chart will be displayed and the second is the configuration object. The configuration object contains information about the type of chart being rendered (line), the labels for the X and Y axes, the color for each line, and also the style of the chart. This includes information about the title, the legend, and the grid to be displayed. Finally, it also includes the step size for the Y axis and the suggested maximum value for the Y axis.
+*/
+const chart_Resposta = new Chart(document.getElementById("myChart"), {
   type: "line",
   data: {
     labels: labelsX,
@@ -99,31 +103,7 @@ const chart = new Chart(document.getElementById("myChart"), {
     },
   },
 });
-let tempo = 1;
-function addData() {
-  var x = [
-    Math.floor(Math.random() * 30),
-    Math.floor(Math.random() * 30),
-    Math.floor(Math.random() * 30),
-  ];
-  var i = 0;
 
-  chart.data.labels.push(tempo);
-
-  chart.data.datasets.forEach((dataset) => {
-    dataset.data.push(x[i]);
-    i++;
-  });
-  /*  chart_Controle.data.labels.push(tempo);*/
-  chart_Controle.data.datasets.forEach((dataset) => {
-    dataset.data.push(Math.floor(Math.random() * 6 - 3));
-    i++;
-  });
-
-  chart.update();
-  chart_Controle.update();
-  tempo = Number((tempo + 0.1).toFixed(1));
-}
 const chart_Controle = new Chart(document.getElementById("SinalDeControle"), {
   type: "line",
   data: {
@@ -151,7 +131,7 @@ const chart_Controle = new Chart(document.getElementById("SinalDeControle"), {
           color: color,
           font: {
             size: 14,
-            family:fonte,
+            family: fonte,
           },
         },
       },
@@ -200,7 +180,6 @@ const chart_Controle = new Chart(document.getElementById("SinalDeControle"), {
         grid: {
           color: color,
           lineWidth: 0.2,
-       
         },
         ticks: {
           stepSize: 1,
@@ -210,14 +189,43 @@ const chart_Controle = new Chart(document.getElementById("SinalDeControle"), {
     },
   },
 });
-const body = document.querySelector('.dashboard');
-const menu=document.getElementById('menu--sanduba');
-const menuItens=document.querySelector('.menu-Sand');
-menu.addEventListener('click',()=>{
-  menuItens.classList.toggle('hidden');
 
+// This code is setting up two event listeners which will trigger functions when the conditions are met. The first event listener is listening for a click on the element with the id of "menu--sanduba", and when the click occurs, it will toggle the class "hidden" on the element with the class name "menu-Sand". The second event listener is listening for a click anywhere on the element with the class of "dashboard", and when the click occurs, it will remove the class "hidden" from the element with the class name "menu-Sand". The code then sets up a function called "addData" which includes a for loop to generate and add data to two chart objects. Finally, the function adds 0.1 to the variable "tempo" and sets it to a precision of one decimal place.
+
+const body = document.querySelector(".dashboard");
+const menu = document.getElementById("menu--sanduba");
+const menuItens = document.querySelector(".menu-Sand");
+menu.addEventListener("click", () => {
+  menuItens.classList.toggle("hidden");
 });
 
-body.addEventListener('click',()=>{
-  menuItens.classList.toggle('hidden');
+body.addEventListener("click", () => {
+  menuItens.classList.remove("hidden");
 });
+
+let tempo = 1;
+function addData() {
+  var x = [
+    Math.floor(Math.random() * 30),
+    Math.floor(Math.random() * 30),
+    Math.floor(Math.random() * 30),
+  ];
+  var i = 0;
+
+  chart_Resposta.data.labels.push(tempo);
+
+  chart_Resposta.data.datasets.forEach((dataset) => {
+    dataset.data.push(x[i]);
+    i++;
+  });
+  /*  chart_Controle.data.labels.push(tempo);*/
+  chart_Controle.data.datasets.forEach((dataset) => {
+    dataset.data.push(Math.floor(Math.random() * 6 - 3));
+    i++;
+  });
+
+  chart_Resposta.update();
+  chart_Controle.update();
+  tempo = Number((tempo + 0.1).toFixed(1));
+}
+setInterval(addData, 1000);
