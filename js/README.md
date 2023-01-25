@@ -104,4 +104,41 @@ const chart_Resposta = new Chart(document.getElementById("myChart"), {
 });
 ```
 
+## Código de manipulação dos gráficos:
+- O código cria uma função chamada "addData" que inclui um <i> loop </i> para gerar um novo valor para cada gráfico. O valor gerado é adicionado ao gráfico usando o método "addData" do objeto chart. Finalmente, o código adiciona 0,1 ao valor da variável "tempo" e define a precisão para 1 casa decimal.
 
+```javascript
+// Função para adicionar dados ao gráfico
+let tempo = 1;
+function addData() {
+  var x = [
+    Math.floor(Math.random() * 30),
+    Math.floor(Math.random() * 30),
+    Math.floor(Math.random() * 30),
+  ];
+  var i = 0;
+
+  chart_Resposta.data.labels.push(tempo);
+
+  chart_Resposta.data.datasets.forEach((dataset) => {
+    dataset.data.push(x[i]);
+    i++;
+  });
+  /*  chart_Controle.data.labels.push(tempo);*/
+  chart_Controle.data.datasets.forEach((dataset) => {
+    dataset.data.push(Math.floor(Math.random() * 6 - 3));
+    i++;
+  });
+
+  chart_Resposta.update();
+  chart_Controle.update();
+  tempo = Number((tempo + 0.1).toFixed(1));
+}
+```
+
+
+
+### A ser retirado e modificado
+- A função "addData" é chamada a cada 1 segundo usando o método "setInterval". Esse método deve ser alterado para 100ms para que o gráfico seja atualizado conforme o tempo de resposta do sistema.
+
+- A função "addData" deve ser alterada para receber dois parâmetros o primeiro deve ser os valores do sensor e o segundo deve ser o valor do sinal de controle gerado pelo controlador PID.
