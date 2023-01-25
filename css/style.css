@@ -58,8 +58,8 @@ canvas {
   color: #323b42;
   display: flex;
   flex-direction: column;
-  width: 25vh;
-  height: 10vh;
+  width: 220px;
+  height: 100px;
   border: 1px solid white;
   border-radius: 8px;
   background: linear-gradient(225deg, #8febff, #6acaff 80%);
@@ -83,8 +83,8 @@ canvas {
   display: flex;
   flex-direction: column;
   align-self: flex-end;
-  width: 25vh;
-  height: 10vh;
+  width: 220px;
+  height: 100px;
   border: 1px solid white;
   border-radius: 8px;
   background: linear-gradient(225deg, #f8c390, #d279ee);
