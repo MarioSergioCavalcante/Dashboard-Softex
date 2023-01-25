@@ -2,6 +2,10 @@
 O código desenvolvido em Javascript é basicamente separado em 2 partes: A primeira parte é responsável por criar as variáveis que serão utilizadas para criar e manipular os gráficos. A segunda parte é responsável por modificar os valores dos gráficos e criar os <i> event listeners</i> que serão responsáveis por modificar alguns elementos visuais da página.
 
 ## Código de criação dos gráficos: 
+- Esse código cria dois objetos charts usando a biblioteca Chart.js. O primeiro objeto é responsável por criar o gráfico de resposta do sistema. O segundo objeto é responsável por criar o gráfico de controle do sistema. 
+
+- O primeiro argumento de cada objeto é o elemento HTML onde o gráfico será renderizado. O segundo argumento é o objeto de configuração. Esse objeto de configuração contém informações sobre o tipo de gráfico que será renderizado (linha), as labels para os eixos X e Y, a cor de cada linha, e também o estilo do gráfico. Isso inclui informações sobre o título, a legenda e a grade a ser exibida. Finalmente, ele também inclui o tamanho do passo para os eixos X,Y e o valor máximo sugerido para o eixo X,Y.
+
 ```javascript
 // Criação dos gráficos
 const chart_Resposta = new Chart(document.getElementById("myChart"), {
@@ -99,4 +103,5 @@ const chart_Resposta = new Chart(document.getElementById("myChart"), {
   },
 });
 ```
+
 

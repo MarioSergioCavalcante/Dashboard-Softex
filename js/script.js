@@ -6,9 +6,7 @@ let labelsX = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
 let SinalControle = [-1, -1, 0, 0, 1, 1, 2, 2, 3, 3];
 let fonte = "Montserrat, sans-serif";
 
-/* This code creates a Chart object using JavaScript's Chart.js library. 
-It takes in two arguments, the first being the element on the HTML page where the chart will be displayed and the second is the configuration object. The configuration object contains information about the type of chart being rendered (line), the labels for the X and Y axes, the color for each line, and also the style of the chart. This includes information about the title, the legend, and the grid to be displayed. Finally, it also includes the step size for the Y axis and the suggested maximum value for the Y axis.
-*/
+
 const chart_Resposta = new Chart(document.getElementById("myChart"), {
   type: "line",
   data: {
