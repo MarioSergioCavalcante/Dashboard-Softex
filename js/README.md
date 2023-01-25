@@ -149,7 +149,7 @@ function addData() {
 [1ª] O primeiro evento é disparado quando o usuário clica no elemento com o id "menu--sanduba" e quando o evento ocorre, ele altera a classe "hidden" no elemento com a classe "menu-Sand". O segundo evento é disparado quando o usuário clica em qualquer lugar no elemento com a classe "dashboard" e quando o evento ocorre, ele remove a classe "hidden" do elemento com a classe "menu-Sand".  
 
 ```javascript
-   const dashboard = document.querySelector(".dashboard");
+const dashboard = document.querySelector(".dashboard");
 const menu = document.getElementById("menu--sanduba");
 const menuItens = document.querySelector(".menu-Sand");
 menu.addEventListener("click", () => {
