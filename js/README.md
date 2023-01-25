@@ -144,11 +144,12 @@ function addData() {
 - A função "addData" deve ser alterada para receber dois parâmetros o primeiro deve ser os valores do sensor e o segundo deve ser o valor do sinal de controle gerado pelo controlador PID.
 
 ## Código de criação dos events listeners:
-- This code is setting up two event listeners which will trigger functions when the conditions are met. The first event listener is listening for a click on the element with the id of "menu--sanduba", and when the click occurs, it will toggle the class "hidden" on the element with the class name "menu-Sand". The second event listener is listening for a click anywhere on the element with the class of "dashboard", and when the click occurs, it will remove the class "hidden" from the element with the class name "menu-Sand".
-    
-    ```javascript
-    // Event listeners
-    const dashboard = document.querySelector(".dashboard");
+- Esse código adiciona dois eventos que serão disparados quando as condições forem atendidas. 
+
+[1ª] O primeiro evento é disparado quando o usuário clica no elemento com o id "menu--sanduba" e quando o evento ocorre, ele altera a classe "hidden" no elemento com a classe "menu-Sand". O segundo evento é disparado quando o usuário clica em qualquer lugar no elemento com a classe "dashboard" e quando o evento ocorre, ele remove a classe "hidden" do elemento com a classe "menu-Sand".  
+
+```javascript
+   const dashboard = document.querySelector(".dashboard");
 const menu = document.getElementById("menu--sanduba");
 const menuItens = document.querySelector(".menu-Sand");
 menu.addEventListener("click", () => {
@@ -158,5 +159,4 @@ menu.addEventListener("click", () => {
 dashboard.addEventListener("click", () => {
   menuItens.classList.remove("hidden");
 });
-
 ```
