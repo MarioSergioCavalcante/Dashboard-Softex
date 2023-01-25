@@ -23,7 +23,7 @@ O dashboard é uma aplicação web que tem como objetivo mostrar os dados coleta
 Esse projeto é livre para uso e distribuição.
 
 ## Contato:
-- [Linkedin] (https://www.linkedin.com/in/mario-sergio-cavalcante-95bb1515a/)
-- [Github] (https://www.github.com/mariosergiocavalcante)
+- [Linkedin](https://www.linkedin.com/in/mario-sergio-cavalcante-95bb1515a/)
+- [Github](https://www.github.com/mariosergiocavalcante)
 
 
