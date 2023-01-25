@@ -190,14 +190,14 @@ const chart_Controle = new Chart(document.getElementById("SinalDeControle"), {
 
 // This code is setting up two event listeners which will trigger functions when the conditions are met. The first event listener is listening for a click on the element with the id of "menu--sanduba", and when the click occurs, it will toggle the class "hidden" on the element with the class name "menu-Sand". The second event listener is listening for a click anywhere on the element with the class of "dashboard", and when the click occurs, it will remove the class "hidden" from the element with the class name "menu-Sand". The code then sets up a function called "addData" which includes a for loop to generate and add data to two chart objects. Finally, the function adds 0.1 to the variable "tempo" and sets it to a precision of one decimal place.
 
-const body = document.querySelector(".dashboard");
+const dashboard = document.querySelector(".dashboard");
 const menu = document.getElementById("menu--sanduba");
 const menuItens = document.querySelector(".menu-Sand");
 menu.addEventListener("click", () => {
   menuItens.classList.toggle("hidden");
 });
 
-body.addEventListener("click", () => {
+dashboard.addEventListener("click", () => {
   menuItens.classList.remove("hidden");
 });
 

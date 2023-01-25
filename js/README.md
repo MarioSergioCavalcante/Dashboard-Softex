@@ -142,3 +142,21 @@ function addData() {
 - A função "addData" é chamada a cada 1 segundo usando o método "setInterval". Esse método deve ser alterado para 100ms para que o gráfico seja atualizado conforme o tempo de resposta do sistema.
 
 - A função "addData" deve ser alterada para receber dois parâmetros o primeiro deve ser os valores do sensor e o segundo deve ser o valor do sinal de controle gerado pelo controlador PID.
+
+## Código de criação dos events listeners:
+- This code is setting up two event listeners which will trigger functions when the conditions are met. The first event listener is listening for a click on the element with the id of "menu--sanduba", and when the click occurs, it will toggle the class "hidden" on the element with the class name "menu-Sand". The second event listener is listening for a click anywhere on the element with the class of "dashboard", and when the click occurs, it will remove the class "hidden" from the element with the class name "menu-Sand".
+    
+    ```javascript
+    // Event listeners
+    const dashboard = document.querySelector(".dashboard");
+const menu = document.getElementById("menu--sanduba");
+const menuItens = document.querySelector(".menu-Sand");
+menu.addEventListener("click", () => {
+  menuItens.classList.toggle("hidden");
+});
+
+dashboard.addEventListener("click", () => {
+  menuItens.classList.remove("hidden");
+});
+
+```
