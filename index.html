@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!---logo on browser-->
+    <link rel="icon" href="./img/logo.png" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="head">
+        <span id="menu--sanduba" class="material-symbols-outlined vermelho">
+          menu
+        </span>
+        <img src="./img/logo.png" alt="Logo" class="head__logo" />
+        <span class="material-symbols-outlined vermelho"> close </span>
+      </header>
+      <div class="menu-Sand">
+        <p class="menu__titulo">Informações sobre a planta:</p>
+        <ul class="menu__lista">
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined cor"
+              >precision_manufacturing
+            </span>
+            <span class="menu__lista--item--titulo">Nome da planta: </span
+            ><span class="menu__lista--item--descricao">Lorem ipsum</span>
+          </li>
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined cor"> Handyman </span>
+            <span class="menu__lista--item--titulo">Data de instalação: </span
+            ><span class="menu__lista--item--descricao">01/01/1990</span>
+          </li>
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined cor"> auto_fix_high </span>
+            <span class="menu__lista--item--titulo">Última Manutenção: </span
+            ><span class="menu__lista--item--descricao">01/01/1990</span>
+          </li>
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined cor">
+              format_ink_highlighter
+            </span>
+            <span class="menu__lista--item--titulo">Modelo: </span
+            ><span class="menu__lista--item--descricao">Lorem ipsum</span>
+          </li>
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined cor"> barcode_reader </span>
+
+            <span class="menu__lista--item--titulo">Fabricante: </span
+            ><span class="menu__lista--item--descricao">Lorem ipsum</span>
+          </li>
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined"> pin_drop </span>
+            <span class="menu__lista--item--titulo">Localização: </span
+            ><span class="menu__lista--item--descricao">Lorem ipsum</span>
+          </li>
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined"> manage_accounts </span>
+            <span class="menu__lista--item--titulo">Responsável: </span
+            ><span class="menu__lista--item--descricao">Lorem ipsum</span>
+          </li>
+        </ul>
+        <p class="menu__titulo">Informações sobre a resposta:</p>
+        <ul class="menu__lista">
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined cor"
+              >precision_manufacturing
+            </span>
+            <span class="menu__lista--item--titulo">Tempo de subida: </span
+            ><span class="menu__lista--item--descricao">Lorem ipsum</span>
+          </li>
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined cor"> Handyman </span>
+            <span class="menu__lista--item--titulo">Data de instalação: </span
+            ><span class="menu__lista--item--descricao">01/01/1990</span>
+          </li>
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined cor"> auto_fix_high </span>
+            <span class="menu__lista--item--titulo">Última Manutenção: </span
+            ><span class="menu__lista--item--descricao">01/01/1990</span>
+          </li>
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined cor">
+              format_ink_highlighter
+            </span>
+            <span class="menu__lista--item--titulo">Modelo: </span
+            ><span class="menu__lista--item--descricao">Lorem ipsum</span>
+          </li>
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined cor"> barcode_reader </span>
+
+            <span class="menu__lista--item--titulo">Fabricante: </span
+            ><span class="menu__lista--item--descricao">Lorem ipsum</span>
+          </li>
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined"> pin_drop </span>
+            <span class="menu__lista--item--titulo">Localização: </span
+            ><span class="menu__lista--item--descricao">Lorem ipsum</span>
+          </li>
+          <li class="menu__lista--item">
+            <span class="material-symbols-outlined"> manage_accounts </span>
+            <span class="menu__lista--item--titulo">Responsável: </span
+            ><span class="menu__lista--item--descricao">Lorem ipsum</span>
+          </li>
+        </ul>
+      </div>
+    <section class="dashboard">
+      
+
+      <h1 class="titulo">Sistema de Controle: Nome do Sistema</h1>
+      <div class="grafico">
+        <canvas id="myChart" class="Teste"></canvas>
+      </div>
+      <div class="grafico">
+        <canvas id="SinalDeControle" class="Teste"></canvas>
+      </div>
+      <div class="container__sensores">
+        <p class="container__titulo">Valores dos sensores:</p>
+        <ul class="container__lista">
+          <li class="container__lista--item">
+            <span class="lista--item--titulo" id="Nome__Sensor_1"
+              >Tanque 1: </span
+            >10.31 cm
+          </li>
+          <li class="container__lista--item">
+            <span class="lista--item--titulo" id="Nome__Sensor_2"
+              >Válvula 2: </span
+            >0.31 psi
+          </li>
+          <li class="container__lista--item">
+            <span class="lista--item--titulo" id="Nome__Sensor_3"
+              >Termômetro: </span
+            >100 ºC
+          </li>
+        </ul>
+      </div>
+      <div class="container__sinalControle">
+        <p class="container__titulo">Sinal de Controle:</p>
+        <ul class="container__lista">
+          <li class="container__lista--item">
+            <span class="lista--item--titulo" id="Nome__Sensor_1"
+              >Sinal atual: </span
+            >10.31 V
+          </li>
+          <li class="container__lista--item">
+            <span class="lista--item--titulo" id="Nome__Sensor_2"
+              >Pico Máximo: </span
+            >13.2 V
+          </li>
+          <li class="container__lista--item">
+            <span class="lista--item--titulo" id="Nome__Sensor_3"
+              >Pico Mínimo: </span
+            >-10 V
+          </li>
+        </ul>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <script src="./js/script.js"></script>
+    </section>
+  </body>
+</html>
