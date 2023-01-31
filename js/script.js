@@ -1,11 +1,12 @@
 const color = "#FFFFFF";
-let dataSetpoint = [15, 15, 15, 15, 15, 10, 10, 10, 10, 10];
-let dataTanque1 = [0, 5, 5, 5, 5, 10, 10, 14, 15, 15];
-let dataTanque2 = [0, 0, 0, 5, 20, 20, 20, 15, 15, 14];
-let labelsX = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
-let SinalControle = [-1, -1, 0, 0, 1, 1, 2, 2, 3, 3];
+let dataSetpoint = []//[15, 15, 15, 15, 15, 10, 10, 10, 10, 10];
+let dataTanque1 = []//[0, 5, 5, 5, 5, 10, 10, 14, 15, 15];
+let dataTanque2 = []//[0, 0, 0, 5, 20, 20, 20, 15, 15, 14];
+let labelsX = []//[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
+let SinalControle = []//[-1, -1, 0, 0, 1, 1, 2, 2, 3, 3];
 let fonte = "Montserrat, sans-serif";
-
+let maximo = -Infinity;
+let minimo = Infinity;
 
 const chart_Resposta = new Chart(document.getElementById("myChart"), {
   type: "line",
@@ -201,7 +202,7 @@ dashboard.addEventListener("click", () => {
   menuItens.classList.remove("hidden");
 });
 
-let tempo = 1;
+let tempo = 0;
 function addData() {
   var x = [
     Math.floor(Math.random() * 30),
@@ -209,21 +210,56 @@ function addData() {
     Math.floor(Math.random() * 30),
   ];
   var i = 0;
-
-  chart_Resposta.data.labels.push(tempo);
+  var controle = Math.floor(Math.random() * 6 - 3);
+  //chart_Resposta.data.labels.push(tempo);
 
   chart_Resposta.data.datasets.forEach((dataset) => {
     dataset.data.push(x[i]);
+    console.log("tempo: ", tempo, "valor: ", x[i], "i: ", i, "controle: ", controle);
     i++;
   });
-  /*  chart_Controle.data.labels.push(tempo);*/
+ chart_Controle.data.labels.push(tempo);
   chart_Controle.data.datasets.forEach((dataset) => {
-    dataset.data.push(Math.floor(Math.random() * 6 - 3));
-    i++;
+    dataset.data.push(controle);
   });
-
+  tempo = Number((tempo +1).toFixed(1));
   chart_Resposta.update();
   chart_Controle.update();
-  tempo = Number((tempo + 0.1).toFixed(1));
+  
+  Atualiza(x, controle);
 }
 setInterval(addData, 1000);
+
+const sensor = document.querySelector("[data-valores-sensores]");
+let maxPic = document.querySelector("[data-sinal-max]");
+function Atualiza(sensores, controle) {
+  //const sensores = [Math.floor(Math.random() * 30), Math.floor(Math.random() * 30), Math.floor(Math.random() * 30)];
+  var text = "";
+  for (var i = 0; i < sensores.length; i++) {
+    text =
+      text +
+      '<li class="container__lista--item"><span class="lista--item--titulo" id="Nome__Sensor_' +
+      parseInt(i + 1) +
+      '">Tanque ' +
+      parseInt(i + 1) +
+      ": </span>" +
+      sensores[i] +
+      "</li>";
+  }
+  sensor.innerHTML = text;
+
+  let minPic = document.querySelector("[data-sinal-min]");
+  let sinalAtual = document.querySelector("[data-sinal-atual]");
+  sinalAtual.innerHTML = controle;
+ // console.log(maxPic.innerHTML);
+  if (controle > maximo) {
+    maxPic.innerHTML = controle;
+    maximo = controle;
+  }
+
+  //console.log(minPic.innerHTML);
+  if (controle < minimo) {
+    minimo = controle;
+    minPic.innerHTML = controle;
+  }
+}

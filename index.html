@@ -108,13 +108,13 @@
       <div class="grafico">
         <canvas id="SinalDeControle" class="Teste"></canvas>
       </div>
+      <div class="informacoes">
       <div class="container__sensores">
         <p class="container__titulo">Valores dos sensores:</p>
-        <ul class="container__lista">
+        <ul class="container__lista" data-valores-sensores>
           <li class="container__lista--item">
-            <span class="lista--item--titulo" id="Nome__Sensor_1"
-              >Tanque 1: </span
-            >10.31 cm
+            <span class="lista--item--titulo" id="Nome__Sensor_1">Tanque 1: </span>
+            10.31 cm
           </li>
           <li class="container__lista--item">
             <span class="lista--item--titulo" id="Nome__Sensor_2"
@@ -132,23 +132,24 @@
         <p class="container__titulo">Sinal de Controle:</p>
         <ul class="container__lista">
           <li class="container__lista--item">
-            <span class="lista--item--titulo" id="Nome__Sensor_1"
+            <span class="lista--item--titulo" id="lista--item--sinal--atual"
               >Sinal atual: </span
-            >10.31 V
+            ><span data-sinal-atual class="sinal-atual">10.31 V</span>
           </li>
           <li class="container__lista--item">
-            <span class="lista--item--titulo" id="Nome__Sensor_2"
+            <span class="lista--item--titulo" id="lista--item--sinal--pico"
               >Pico Máximo: </span
-            >13.2 V
+            >
+            <span data-sinal-max class="sinal-atual" >10.31</span>
           </li>
           <li class="container__lista--item">
-            <span class="lista--item--titulo" id="Nome__Sensor_3"
+            <span class="lista--item--titulo" id="lista--item--sinal--minimo"
               >Pico Mínimo: </span
-            >-10 V
+            ><span data-sinal-min class="sinal-atual">10.31 V</span>
           </li>
         </ul>
       </div>
-
+    </div>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
       <script src="./js/script.js"></script>
